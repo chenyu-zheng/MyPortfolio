@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "My JS Exercises";
+}
+
+<style>
+</style>
+
+<h2>My JS Exercises</h2>
+
+<div class="container exercises-container">
+
+    <button type="button" class="btn btn-info btn-lg" id="btn-show-exercises" data-toggle="modal" data-target="#exerciseModal">Show Exercises</button>
+
+    <div class="modal fade" id="exerciseModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content exercises-modal">
+
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#menu1">Statistics</a></li>
+                    <li><a data-toggle="pill" href="#menu2">Factorial</a></li>
+                    <li><a data-toggle="pill" href="#menu3">FizzBuzz</a></li>
+                    <li><a data-toggle="pill" href="#menu4">Palindrome</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="menu1" class="tab-pane fade in active statistics">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Num 1<input type="number" name="num1" /></label>
+                                <label>Num 2<input type="number" name="num2" /></label>
+                                <label>Num 3<input type="number" name="num3" /></label>
+                                <label>Num 4<input type="number" name="num4" /></label>
+                                <label>Num 5<input type="number" name="num5" /></label>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row"><span class="output"></span></div>
+                                <div class="row"><span class="output"></span></div>
+                                <div class="row"><span class="output"></span></div>
+                                <div class="row"><span class="output"></span></div>
+                                <div class="row"><span class="output"></span></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="col-md-12 msg"></span>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-default calc-btn">Calculate</button>
+                        </div>
+                    </div>
+
+                    <div id="menu2" class="tab-pane fade">
+                        <div class="row">
+                            <label class="col-md-12">Number <input type="number" /></label>
+                        </div>
+                        <div class="row">
+                            <span class="col-md-12 output"></span>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-default calc-btn">Calculate</button>
+                        </div>
+                    </div>
+
+                    <div id="menu3" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="col-md-12">Number 1 <input type="number" /></label>
+                                <label class="col-md-12">Number 2 <input type="number" /></label>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-12 output"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-default fizzbuzz-btn">FizzBuzz</button>
+                        </div>
+                    </div>
+
+                    <div id="menu4" class="tab-pane fade">
+                        <div class="row">
+                            <label class="col-md-12">Enter a word to check <input type="text" /></label>
+                        </div>
+                        <div class="row">
+                            <span class="col-md-12 output"></span>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-default check-btn">Check</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/exercises.js")"></script>
+}
