@@ -189,6 +189,7 @@
     <Content Include="img\portfolio\escape.png" />
     <Content Include="img\portfolio\golden-preview.png" />
     <Content Include="img\portfolio\golden.png" />
+    <Content Include="img\portfolio\js-code.png" />
     <Content Include="img\portfolio\roundicons-free.png" />
     <Content Include="img\portfolio\roundicons.png" />
     <Content Include="img\portfolio\startup-framework-preview.png" />
