@@ -27,6 +27,9 @@
 
     <!-- Theme CSS -->
     <link href="~/Content/agency.min.css" rel="stylesheet" />
+    <!-- Syntax Highlighter -->
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeDarkPlus.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -505,6 +508,8 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
+                                @*TODO: refactor redundant code*@
+                                @*TODO: add styles*@
                                 <h2>JavaScript Exercises</h2>
                                 @*<p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>*@
 
@@ -518,6 +523,9 @@
 
                                 <div class="tab-content">
                                     <div id="menu1" class="tab-pane fade in active statistics">
+                                        <div class="row">
+                                            <p>Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>produce</b> of these numbers.</p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Num 1<input type="number" name="num1" /></label>
@@ -539,13 +547,72 @@
                                         </div>
                                         <div class="row">
                                             <button type="button" class="btn btn-default calc-btn">Calculate</button>
+                                            <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
-                                        <div class="row">
-                                            <p>Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>produce</b> of these numbers.</p>
+                                        <div class="row code">
+                                            <pre class="brush: js">
+  const calcBtn = document.querySelector('#menu1 .calc-btn');
+  const inputs = [...document.querySelectorAll('#menu1 input')];
+  const outputs = document.querySelectorAll('#menu1 .output');
+  const msg = document.querySelector('#menu1 .msg');
+
+  function getNumbers(inputs) {
+    return inputs.map(input => Number(input.value));
+  }
+
+  function validate(inputs) {
+    for (const input of inputs) {
+      if (input.value === '' || isNaN(input.value)) {
+        return `'${input.value}' is not a valid number.`;
+      }
+    }
+  }
+
+  function calculate(numbers) {
+    const max = Math.max(...numbers);
+    const min = Math.min(...numbers);
+    const sum = numbers.reduce((acc, cur) => acc + cur);
+    const mean = sum / numbers.length;
+    const product = numbers.reduce((acc, cur) => acc * cur);
+
+    return {
+      max,
+      min,
+      sum,
+      mean,
+      product
+    };
+  }
+
+  function showOutput(obj) {
+    let n = 0;
+    Object.keys(obj).forEach(key => {
+      outputs[n].textContent = `${key}: ${obj[key]}`;
+      n++;
+    });
+  }
+
+  function handleClick() {
+    msg.textContent = '';
+    outputs.forEach(output => (output.textContent = ''));
+
+    const errMsg = validate(inputs);
+    if (errMsg) {
+      msg.textContent = errMsg;
+      return;
+    }
+    showOutput(calculate(getNumbers(inputs)));
+  }
+
+  calcBtn.addEventListener('click', handleClick);
+                                            </pre>
                                         </div>
                                     </div>
 
                                     <div id="menu2" class="tab-pane fade">
+                                        <div class="row">
+                                            <p>This program will return the <b>Factorial</b> of the input number.</p>
+                                        </div>
                                         <div class="row">
                                             <label class="col-md-12">Number <input type="number" /></label>
                                         </div>
@@ -554,13 +621,43 @@
                                         </div>
                                         <div class="row">
                                             <button type="button" class="btn btn-default calc-btn">Calculate</button>
+                                            <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
-                                        <div class="row">
-                                            <p>This program will return the <b>Factorial</b> of the input number.</p>
+                                        <div class="row code">
+                                            <pre class="brush: js">
+  const calcBtn = document.querySelector('#menu2 .calc-btn');
+  const input = document.querySelector('#menu2 input');
+  const output = document.querySelector('#menu2 .output');
+
+  clearOnClose.push(input, output);
+
+  function factorial(n) {
+    if (n <= 1) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+
+  function handleClick() {
+    const n = Number(input.value);
+    let msg = '';
+    if (!Number.isInteger(n) || n < 0) {
+      msg = `'${n}' must be a non-negative integer.`;
+    } else {
+      msg = `The factorial of '${n}' is ${factorial(n)}.`;
+    }
+    output.textContent = msg;
+  }
+
+  calcBtn.addEventListener('click', handleClick);
+                                            </pre>
                                         </div>
                                     </div>
 
                                     <div id="menu3" class="tab-pane fade">
+                                        <div class="row">
+                                            <p>Put in 2 numbers. This program will determine if each number from 1-100 is divisible by these 2 numbers. <b>Fizz</b> means the number is divisible by the first number, <b>Buzz</b> means the second, and <b>FizzBuzz</b> means both.</p>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="col-md-12">Number 1 <input type="number" /></label>
@@ -572,13 +669,62 @@
                                         </div>
                                         <div class="row">
                                             <button type="button" class="btn btn-default fizzbuzz-btn">FizzBuzz</button>
+                                            <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
-                                        <div class="row">
-                                            <p>Put in 2 numbers. This program will determine if each number from 1-100 is divisible by these 2 numbers. <b>Fizz</b> means the number is divisible by the first number, <b>Buzz</b> means the second, and <b>FizzBuzz</b> means both.</p>
+                                        <div class="row code">
+                                            <pre class="brush: js">
+  const checkBtn = document.querySelector('#menu3 .fizzbuzz-btn');
+  const inputs = [...document.querySelectorAll('#menu3 input')];
+  const output = document.querySelector('#menu3 .output');
+
+  clearOnClose.push(...inputs, output);
+
+  function validate(inputs) {
+    for (const input of inputs) {
+      const n = Number(input.value);
+      if (!Number.isInteger(n) || n < 1) {
+        return `Input numbers must be integers and greater than 0.`;
+      }
+    }
+  }
+
+  function fizzBuzz(m, n) {
+    const results = [];
+    for (let i = 1; i <= 100; i++) {
+      let str = '';
+      if (i % m === 0) {
+        str += 'Fizz';
+      }
+      if (i % n === 0) {
+        str += 'Buzz';
+      }
+      results.push(str === '' ? i : str);
+    }
+    return results;
+  }
+
+  function handleClick() {
+    output.textContent = '';
+    const msg = validate(inputs);
+    if (msg) {
+      output.textContent = msg;
+      return;
+    }
+    output.textContent = fizzBuzz(
+      Number(inputs[0].value),
+      Number(inputs[1].value)
+    ).join(', ');
+  }
+
+  checkBtn.addEventListener('click', handleClick);
+                                            </pre>
                                         </div>
                                     </div>
 
                                     <div id="menu4" class="tab-pane fade">
+                                        <div class="row">
+                                            <p>This program determines if an English word that you type in is a <b>palindrome</b>.</p>
+                                        </div>
                                         <div class="row">
                                             <label class="col-md-12">Enter a word to check <input type="text" /></label>
                                         </div>
@@ -587,9 +733,40 @@
                                         </div>
                                         <div class="row">
                                             <button type="button" class="btn btn-default check-btn">Check</button>
+                                            <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
-                                        <div class="row">
-                                            <p>This program determines if an English word that you type in is a <b>palindrome</b>.</p>
+                                        <div class="row code">
+                                            <pre class="brush: js">
+  const checkBtn = document.querySelector('#menu4 .check-btn');
+  const input = document.querySelector('#menu4 input');
+  const output = document.querySelector('#menu4 .output');
+
+  clearOnClose.push(input, output);
+
+  function checkPalindrome(word) {
+    const reversed = word
+      .split('')
+      .reverse()
+      .join('');
+    if (word === reversed) {
+      return true;
+    }
+    return false;
+  }
+
+  function handleClick() {
+    let msg = '';
+    const word = input.value.trim().toLowerCase();
+    if (word.match(/^[a-z]+$/)) {
+      msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome`;
+    } else {
+      msg = 'Only English letters are allowed!';
+    }
+    output.textContent = msg;
+  }
+
+  checkBtn.addEventListener('click', handleClick);
+                                            </pre>
                                         </div>
                                     </div>
                                 </div>
@@ -768,6 +945,11 @@
 
     <!-- JavaScript Exercises -->
     <script src="~/Scripts/exercises.js"></script>
+
+    <!-- Syntax Highlighter -->
+    <script src="~/Scripts/SyntaxHighlighter/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/shBrushES6.js"></script>
+    <script type="text/javascript">SyntaxHighlighter.all()</script>
 </body>
 
 </html>

@@ -8,6 +8,8 @@ function clearText() {
 
 $('#exerciseModal').on('hidden.bs.modal', clearText);
 
+showCode = [];
+
 // Statistics
 (() => {
   const calcBtn = document.querySelector('#menu1 .calc-btn');
@@ -15,6 +17,10 @@ $('#exerciseModal').on('hidden.bs.modal', clearText);
   const outputs = document.querySelectorAll('#menu1 .output');
   const msg = document.querySelector('#menu1 .msg');
 
+  showCode.push({
+    code: document.querySelector('#menu1 .code'),
+    button: document.querySelector('#menu1 .show-code')
+  });
   clearOnClose.push(...inputs, ...outputs, msg);
 
   function getNumbers(inputs) {
@@ -74,6 +80,10 @@ $('#exerciseModal').on('hidden.bs.modal', clearText);
   const input = document.querySelector('#menu2 input');
   const output = document.querySelector('#menu2 .output');
 
+  showCode.push({
+    code: document.querySelector('#menu2 .code'),
+    button: document.querySelector('#menu2 .show-code')
+  });
   clearOnClose.push(input, output);
 
   function factorial(n) {
@@ -103,6 +113,10 @@ $('#exerciseModal').on('hidden.bs.modal', clearText);
   const inputs = [...document.querySelectorAll('#menu3 input')];
   const output = document.querySelector('#menu3 .output');
 
+  showCode.push({
+    code: document.querySelector('#menu3 .code'),
+    button: document.querySelector('#menu3 .show-code')
+  });
   clearOnClose.push(...inputs, output);
 
   function validate(inputs) {
@@ -151,6 +165,10 @@ $('#exerciseModal').on('hidden.bs.modal', clearText);
   const input = document.querySelector('#menu4 input');
   const output = document.querySelector('#menu4 .output');
 
+  showCode.push({
+    code: document.querySelector('#menu4 .code'),
+    button: document.querySelector('#menu4 .show-code')
+  });
   clearOnClose.push(input, output);
 
   function checkPalindrome(word) {
@@ -177,3 +195,13 @@ $('#exerciseModal').on('hidden.bs.modal', clearText);
 
   checkBtn.addEventListener('click', handleClick);
 })();
+
+showCode.forEach(item => {
+  $(item.code).hide();
+  $(item.button).click(() => {
+    $(item.code).toggle();
+    $(item.button).text(
+      $(item.button).text() === 'Show Code' ? 'Hide Code' : 'Show Code'
+    );
+  });
+});
