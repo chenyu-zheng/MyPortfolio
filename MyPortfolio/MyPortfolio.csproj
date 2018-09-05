@@ -165,6 +165,7 @@
     <Content Include="Content\creative.min.css" />
     <Content Include="Content\fontawesome.all.css" />
     <Content Include="Content\fontawesome.all.min.css" />
+    <Content Include="Content\main.css" />
     <Content Include="Content\SyntaxHighlighter\shCore.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
     <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />

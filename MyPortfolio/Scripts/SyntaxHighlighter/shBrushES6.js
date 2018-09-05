@@ -37,7 +37,7 @@
             { regex: r.multiLineDoubleQuotedString, css: 'string' },			// double quoted strings
             { regex: r.multiLineSingleQuotedString, css: 'string' },			// single quoted strings
             { regex: new RegExp('`([^\\\\`]|\\\\.)*`', 'gs'), css: 'string' },			// * template literals
-            //{ regex: new RegExp(/\$\{.+\}/, 'g'), css: 'keyword' },			// * expressions in template literals
+            //{ regex: new RegExp(/[^${*}$]/, 'g'), css: 'keyword' },			// * expressions in template literals
             { regex: r.singleLineCComments, css: 'comments' },			// one line comments
             { regex: r.multiLineCComments, css: 'comments' },			// multiline comments
             { regex: /\s*#.*/gm, css: 'preprocessor' },		// preprocessor tags like #region and #endregion

@@ -31,6 +31,9 @@
     <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
     <link href="~/Content/SyntaxHighlighter/shThemeDarkPlus.css" rel="stylesheet" />
 
+    <!-- main CSS -->
+    <link href="~/Content/main.css" rel="stylesheet" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -86,7 +89,7 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
+                <div class="intro-lead-in">Welcome To My Portfolio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
                 <a href="#skills" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
@@ -106,9 +109,9 @@
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <i class="fab fa-js fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="skills-heading">E-Commerce</h4>
+                    <h4 class="skills-heading">JavaScript</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
                 <div class="col-md-4">
@@ -241,28 +244,15 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="~/img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
+ 
                         <li class="timeline-inverted">
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="~/img/about/2.jpg" alt="">
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
+                                    <h4>2012 - 2015</h4>
+                                    <h4 class="subheading">Game Designer</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -275,8 +265,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Skills</h4>
+                                    <h4>2015 - 2017</h4>
+                                    <h4 class="subheading">Lead Game Designer</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -289,8 +279,8 @@
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                    <h4>2018</h4>
+                                    <h4 class="subheading">Software Developer Diploma</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
@@ -515,7 +505,7 @@
 
                                 @*Menu Pills*@
                                 <ul class="nav nav-pills">
-                                    <li class="active"><a data-toggle="pill" href="#menu1">Statistics</a></li>
+                                    <li class="active"><a class="tab-modal" data-toggle="pill" href="#menu1">Statistics</a></li>
                                     <li><a data-toggle="pill" href="#menu2">Factorial</a></li>
                                     <li><a data-toggle="pill" href="#menu3">FizzBuzz</a></li>
                                     <li><a data-toggle="pill" href="#menu4">Palindrome</a></li>
@@ -524,15 +514,15 @@
                                 <div class="tab-content">
                                     <div id="menu1" class="tab-pane fade in active statistics">
                                         <div class="row">
-                                            <p>Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>produce</b> of these numbers.</p>
+                                            <p class="jse-description">Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>produce</b> of these numbers.</p>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-body">
                                             <div class="col-md-6">
-                                                <label>Num 1<input type="number" name="num1" /></label>
-                                                <label>Num 2<input type="number" name="num2" /></label>
-                                                <label>Num 3<input type="number" name="num3" /></label>
-                                                <label>Num 4<input type="number" name="num4" /></label>
-                                                <label>Num 5<input type="number" name="num5" /></label>
+                                                <label>Num 1 <input type="number" name="num1" /></label>
+                                                <label>Num 2 <input type="number" name="num2" /></label>
+                                                <label>Num 3 <input type="number" name="num3" /></label>
+                                                <label>Num 4 <input type="number" name="num4" /></label>
+                                                <label>Num 5 <input type="number" name="num5" /></label>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="row"><span class="output"></span></div>
@@ -545,7 +535,7 @@
                                         <div class="row">
                                             <span class="col-md-12 msg"></span>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-buttons">
                                             <button type="button" class="btn btn-default calc-btn">Calculate</button>
                                             <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
@@ -611,15 +601,15 @@
 
                                     <div id="menu2" class="tab-pane fade">
                                         <div class="row">
-                                            <p>This program will return the <b>Factorial</b> of the input number.</p>
+                                            <p class="jse-description">This program will return the <b>Factorial</b> of the input number.</p>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-body">
                                             <label class="col-md-12">Number <input type="number" /></label>
                                         </div>
                                         <div class="row">
                                             <span class="col-md-12 output"></span>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-buttons">
                                             <button type="button" class="btn btn-default calc-btn">Calculate</button>
                                             <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
@@ -656,9 +646,9 @@
 
                                     <div id="menu3" class="tab-pane fade">
                                         <div class="row">
-                                            <p>Put in 2 numbers. This program will determine if each number from 1-100 is divisible by these 2 numbers. <b>Fizz</b> means the number is divisible by the first number, <b>Buzz</b> means the second, and <b>FizzBuzz</b> means both.</p>
+                                            <p class="jse-description">Put in 2 numbers. This program will determine if each number from 1-100 is divisible by these 2 numbers. <b>Fizz</b> means the number is divisible by the first number, <b>Buzz</b> means the second, and <b>FizzBuzz</b> means both.</p>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-body">
                                             <div class="col-md-6">
                                                 <label class="col-md-12">Number 1 <input type="number" /></label>
                                                 <label class="col-md-12">Number 2 <input type="number" /></label>
@@ -667,7 +657,7 @@
                                                 <div class="col-md-12 output"></div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-buttons">
                                             <button type="button" class="btn btn-default fizzbuzz-btn">FizzBuzz</button>
                                             <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
@@ -723,15 +713,15 @@
 
                                     <div id="menu4" class="tab-pane fade">
                                         <div class="row">
-                                            <p>This program determines if an English word that you type in is a <b>palindrome</b>.</p>
+                                            <p class="jse-description">This program determines if an English word that you type in is a <b>palindrome</b>.</p>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-body">
                                             <label class="col-md-12">Enter a word to check <input type="text" /></label>
                                         </div>
                                         <div class="row">
                                             <span class="col-md-12 output"></span>
                                         </div>
-                                        <div class="row">
+                                        <div class="row jse-buttons">
                                             <button type="button" class="btn btn-default check-btn">Check</button>
                                             <button type="button" class="btn btn-default show-code">Show Code</button>
                                         </div>
