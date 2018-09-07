@@ -1,4 +1,9 @@
-﻿body {
+﻿section h2.section-heading {
+    margin-bottom: 75px;
+}
+
+.portfolio-modal .modal-content h2 {
+    margin-bottom: 35px;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
@@ -14,6 +19,22 @@
     margin: 30px;
 }
 
+.jse-buttons button {
+    min-width: 100px;
+}
+
 .jse-body {
     margin: 20px 0;
+}
+
+.resume-entry {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.resume-link {
+    display: block;
+    position: relative;
+    /* max-width: 400px; */
+    margin: 0 auto;
 }

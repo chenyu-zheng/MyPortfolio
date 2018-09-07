@@ -12,14 +12,14 @@ showCode = [];
 
 // Statistics
 (() => {
-  const calcBtn = document.querySelector('#menu1 .calc-btn');
-  const inputs = [...document.querySelectorAll('#menu1 input')];
-  const outputs = document.querySelectorAll('#menu1 .output');
-  const msg = document.querySelector('#menu1 .msg');
+  const calcBtn = document.querySelector('#jse-tab1 .calc-btn');
+  const inputs = [...document.querySelectorAll('#jse-tab1 input')];
+  const outputs = document.querySelectorAll('#jse-tab1 .output');
+  const msg = document.querySelector('#jse-tab1 .msg');
 
   showCode.push({
-    code: document.querySelector('#menu1 .code'),
-    button: document.querySelector('#menu1 .show-code')
+    code: document.querySelector('#jse-tab1 .code'),
+    button: document.querySelector('#jse-tab1 .show-code')
   });
   clearOnClose.push(...inputs, ...outputs, msg);
 
@@ -76,13 +76,13 @@ showCode = [];
 
 // Factorial
 (() => {
-  const calcBtn = document.querySelector('#menu2 .calc-btn');
-  const input = document.querySelector('#menu2 input');
-  const output = document.querySelector('#menu2 .output');
+  const calcBtn = document.querySelector('#jse-tab2 .calc-btn');
+  const input = document.querySelector('#jse-tab2 input');
+  const output = document.querySelector('#jse-tab2 .output');
 
   showCode.push({
-    code: document.querySelector('#menu2 .code'),
-    button: document.querySelector('#menu2 .show-code')
+    code: document.querySelector('#jse-tab2 .code'),
+    button: document.querySelector('#jse-tab2 .show-code')
   });
   clearOnClose.push(input, output);
 
@@ -97,7 +97,7 @@ showCode = [];
     const n = Number(input.value);
     let msg = '';
     if (!Number.isInteger(n) || n < 0) {
-      msg = `'${n}' must be a non-negative integer.`;
+      msg = `The number must be a non-negative integer.`;
     } else {
       msg = `The factorial of '${n}' is ${factorial(n)}.`;
     }
@@ -109,13 +109,13 @@ showCode = [];
 
 // FizzBuzz
 (() => {
-  const checkBtn = document.querySelector('#menu3 .fizzbuzz-btn');
-  const inputs = [...document.querySelectorAll('#menu3 input')];
-  const output = document.querySelector('#menu3 .output');
+  const checkBtn = document.querySelector('#jse-tab3 .fizzbuzz-btn');
+  const inputs = [...document.querySelectorAll('#jse-tab3 input')];
+  const output = document.querySelector('#jse-tab3 .output');
 
   showCode.push({
-    code: document.querySelector('#menu3 .code'),
-    button: document.querySelector('#menu3 .show-code')
+    code: document.querySelector('#jse-tab3 .code'),
+    button: document.querySelector('#jse-tab3 .show-code')
   });
   clearOnClose.push(...inputs, output);
 
@@ -161,13 +161,13 @@ showCode = [];
 
 // Palindrome
 (() => {
-  const checkBtn = document.querySelector('#menu4 .check-btn');
-  const input = document.querySelector('#menu4 input');
-  const output = document.querySelector('#menu4 .output');
+  const checkBtn = document.querySelector('#jse-tab4 .check-btn');
+  const input = document.querySelector('#jse-tab4 input');
+  const output = document.querySelector('#jse-tab4 .output');
 
   showCode.push({
-    code: document.querySelector('#menu4 .code'),
-    button: document.querySelector('#menu4 .show-code')
+    code: document.querySelector('#jse-tab4 .code'),
+    button: document.querySelector('#jse-tab4 .show-code')
   });
   clearOnClose.push(input, output);
 
