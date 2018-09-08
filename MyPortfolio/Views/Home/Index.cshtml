@@ -512,7 +512,7 @@
                                     <div id="jse-tab1" class="tab-pane fade in active statistics">
                                         <div class="row jse-description">
                                             <div class="col-md-12">
-                                                Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>produce</b> of these numbers.
+                                                Put in 5 numbers and this program will give you the <b>max</b>, the <b>min</b>, the <b>sum</b>, the <b>mean</b>, and the <b>product</b> of these numbers.
                                             </div>
                                         </div>
                                         <div class="row jse-body">
@@ -587,7 +587,7 @@
   function validate(inputs) {
     for (const input of inputs) {
       if (!input.value) {
-        return "Please fill all 5 fields with a number."
+        return "Please fill all 5 fields with a number.";
       }
       if (isNaN(input.value)) {
         return `'${input.value}' is not a valid number.`;
@@ -730,7 +730,7 @@
     for (const input of inputs) {
       const n = Number(input.value);
       if (!input.value || !Number.isInteger(n) || n < 1) {
-        return "Please fill all 2 fields with a positive integer."
+        return "Please fill all 2 fields with a positive integer.";
       }
     }
   }
@@ -776,19 +776,17 @@
                                             </div>
                                         </div>
                                         <div class="row jse-body">
-                                            <div class="col-md-6">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <label>Enter a word to check</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <input type="text" />
-                                                    </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Enter a word to check</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 output"></div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <input type="text" />
+                                                </div>
+                                                <div class="col-md-6 output"></div>
+                                            </div>
                                         </div>
                                         <div class="row jse-buttons">
                                             <div class="col-md-offset-2 col-md-4">
@@ -822,7 +820,7 @@
     let msg = '';
     const word = input.value.trim().toLowerCase();
     if (word.match(/^[a-z]+$/)) {
-      msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome`;
+      msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome.`;
     } else {
       msg = 'Please fill the field with English letters only.';
     }

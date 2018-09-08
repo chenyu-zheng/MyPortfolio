@@ -10,6 +10,12 @@
     background-color: #fed136;
 }
 
+
+/* JS Exercises */
+#jse-tab1 .jse-body .row {
+    min-height: 31px;
+}
+
 .jse-description {
     margin-top: 30px;
     padding: 10px;
@@ -27,6 +33,8 @@
     margin: 20px 0;
 }
 
+
+/* Resume */
 .resume-entry {
     text-align: center;
     margin-top: 40px;

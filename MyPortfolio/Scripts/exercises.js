@@ -30,7 +30,7 @@ showCode = [];
   function validate(inputs) {
     for (const input of inputs) {
       if (!input.value) {
-        return "Please fill all 5 fields with a number."
+        return 'Please fill all 5 fields with a number.';
       }
       if (isNaN(input.value)) {
         return `'${input.value}' is not a valid number.`;
@@ -124,7 +124,7 @@ showCode = [];
     for (const input of inputs) {
       const n = Number(input.value);
       if (!input.value || !Number.isInteger(n) || n < 1) {
-        return "Please fill all 2 fields with a positive integer."
+        return 'Please fill all 2 fields with a positive integer.';
       }
     }
   }
@@ -187,7 +187,7 @@ showCode = [];
     let msg = '';
     const word = input.value.trim().toLowerCase();
     if (word.match(/^[a-z]+$/)) {
-      msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome`;
+      msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome.`;
     } else {
       msg = 'Please fill the field with English letters only.';
     }
