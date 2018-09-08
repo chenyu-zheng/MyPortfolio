@@ -29,7 +29,10 @@ showCode = [];
 
   function validate(inputs) {
     for (const input of inputs) {
-      if (input.value === '' || isNaN(input.value)) {
+      if (!input.value) {
+        return "Please fill all 5 fields with a number."
+      }
+      if (isNaN(input.value)) {
         return `'${input.value}' is not a valid number.`;
       }
     }
@@ -95,13 +98,11 @@ showCode = [];
 
   function handleClick() {
     const n = Number(input.value);
-    let msg = '';
-    if (!Number.isInteger(n) || n < 0) {
-      msg = `The number must be a non-negative integer.`;
+    if (!input.value || !Number.isInteger(n) || n < 0) {
+      output.textContent = `Please fill the field with a non-negative integer.`;
     } else {
-      msg = `The factorial of '${n}' is ${factorial(n)}.`;
+      output.textContent = `The factorial of '${n}' is ${factorial(n)}.`;
     }
-    output.textContent = msg;
   }
 
   calcBtn.addEventListener('click', handleClick);
@@ -122,8 +123,8 @@ showCode = [];
   function validate(inputs) {
     for (const input of inputs) {
       const n = Number(input.value);
-      if (!Number.isInteger(n) || n < 1) {
-        return `Input numbers must be integers and greater than 0.`;
+      if (!input.value || !Number.isInteger(n) || n < 1) {
+        return "Please fill all 2 fields with a positive integer."
       }
     }
   }
@@ -188,7 +189,7 @@ showCode = [];
     if (word.match(/^[a-z]+$/)) {
       msg = `${word} is ${checkPalindrome(word) ? '' : 'not '}a palindrome`;
     } else {
-      msg = 'Only English letters are allowed!';
+      msg = 'Please fill the field with English letters only.';
     }
     output.textContent = msg;
   }
