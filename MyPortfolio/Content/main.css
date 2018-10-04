@@ -1,4 +1,8 @@
-﻿section h2.section-heading {
+﻿header {
+    background-image: url(../img/IMG_6299.jpg);
+}
+
+section h2.section-heading {
     margin-bottom: 75px;
 }
 
@@ -46,4 +50,5 @@
     position: relative;
     /* max-width: 400px; */
     margin: 0 auto;
+    text-decoration: none;
 }
