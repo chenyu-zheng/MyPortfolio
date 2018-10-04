@@ -161,8 +161,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\creative.css" />
-    <Content Include="Content\creative.min.css" />
     <Content Include="Content\fontawesome.all.css" />
     <Content Include="Content\fontawesome.all.min.css" />
     <Content Include="Content\main.css" />
@@ -242,6 +240,8 @@
     <Content Include="fonts\fa-solid-900.ttf" />
     <Content Include="fonts\fa-solid-900.woff" />
     <Content Include="fonts\fa-solid-900.woff2" />
+    <None Include="Properties\PublishProfiles\czportfolio - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\czportfolio - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\exercises.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
