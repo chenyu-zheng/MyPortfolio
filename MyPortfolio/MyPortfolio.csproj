@@ -215,9 +215,11 @@
     <Content Include="img\portfolio\golden-preview.png" />
     <Content Include="img\portfolio\golden.png" />
     <Content Include="img\portfolio\js-code.png" />
+    <Content Include="img\portfolio\machinggame.png" />
     <Content Include="img\portfolio\minesweeper.png" />
     <Content Include="img\portfolio\myreads.png" />
     <Content Include="img\portfolio\pixelartmaker.png" />
+    <Content Include="img\portfolio\restaurantratings.png" />
     <Content Include="img\portfolio\roundicons-free.png" />
     <Content Include="img\portfolio\roundicons.png" />
     <Content Include="img\portfolio\startup-framework-preview.png" />
