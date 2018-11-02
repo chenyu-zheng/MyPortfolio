@@ -207,6 +207,7 @@
     <Content Include="img\logos\wordpress.jpg" />
     <Content Include="img\map-image.png" />
     <Content Include="img\portfolio\blogapp.png" />
+    <Content Include="img\portfolio\bugtracker.png" />
     <Content Include="img\portfolio\deathyard.png" />
     <Content Include="img\portfolio\dreams-preview.png" />
     <Content Include="img\portfolio\dreams.png" />
